@@ -1,10 +1,12 @@
+import { CHOOSE_SEAT, REMOVE_TICKET } from "./constants";
+
 const initialState = {
   bookingTickets: [],
 };
 
 const bookTicketsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "CHOOSE_SEAT": {
+    case CHOOSE_SEAT: {
       let bookingTicketsClone = [...state.bookingTickets];
 
       const index = bookingTicketsClone.findIndex(
@@ -24,7 +26,7 @@ const bookTicketsReducer = (state = initialState, action) => {
       return { ...state };
     }
 
-    case "REMOVE_TICKET": {
+    case REMOVE_TICKET: {
       let bookingTicketsClone = [...state.bookingTickets];
 
       const index = bookingTicketsClone.findIndex(

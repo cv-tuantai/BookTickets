@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { actRemoveTicket } from "../store/action";
 
 class BookingInfo extends Component {
   renderInfo = () => {
@@ -77,12 +78,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     removeTicket: (seat) => {
-      const action = {
-        type: "REMOVE_TICKET",
-        payload: seat,
-      };
-
-      dispatch(action);
+      dispatch(actRemoveTicket(seat));
     },
   };
 };

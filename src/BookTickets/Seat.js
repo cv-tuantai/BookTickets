@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { actChooseSeat } from "../store/action";
 
 class Seat extends Component {
   renderRow = () => {
@@ -52,12 +53,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     chooseSeat: (seat) => {
-      const action = {
-        type: "CHOOSE_SEAT",
-        payload: seat,
-      };
-
-      dispatch(action);
+      dispatch(actChooseSeat(seat));
     },
   };
 };
